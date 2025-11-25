@@ -1,0 +1,111 @@
+---
+BasedOnStyle: WebKit
+AccessModifierOffset: -4
+AlignAfterOpenBracket: DontAlign
+AlignArrayOfStructures: None
+AlignConsecutiveAssignments:
+  Enabled: false
+  AcrossEmptyLines: false
+  AcrossComments: false
+  AlignCompound: false
+  PadOperators: true
+AlignConsecutiveDeclarations:
+  Enabled: false
+  AcrossEmptyLines: false
+  AcrossComments: false
+  AlignCompound: false
+  PadOperators: false
+AlignConsecutiveMacros:
+  Enabled: false
+  AcrossEmptyLines: false
+  AcrossComments: false
+  AlignCompound: false
+  PadOperators: false
+AlignEscapedNewlines: Right
+AlignOperands: DontAlign
+AlignTrailingComments:
+  Kind: Never
+  OverEmptyLines: 0
+AllowAllArgumentsOnNextLine: true
+AllowAllParametersOfDeclarationOnNextLine: true
+AllowShortBlocksOnASingleLine: Empty
+AllowShortCaseLabelsOnASingleLine: false
+AllowShortEnumsOnASingleLine: true
+AllowShortFunctionsOnASingleLine: All
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLoopsOnASingleLine: false
+AlwaysBreakBeforeMultilineStrings: false
+BinPackArguments: true
+BinPackParameters: true
+BraceWrapping:
+  AfterCaseLabel: false
+  AfterControlStatement: Never
+  AfterFunction: true
+  IndentBraces: false
+  SplitEmptyFunction: true
+  SplitEmptyRecord: true
+BreakAdjacentStringLiterals: true
+BreakAfterAttributes: Leave
+BreakArrays: true
+BreakBeforeBinaryOperators: All
+BreakBeforeBraces: WebKit
+BreakBeforeTernaryOperators: true
+BreakStringLiterals: true
+ColumnLimit: 0
+CommentPragmas: '^ IWYU pragma:'
+CompactNamespaces: false
+ContinuationIndentWidth: 4
+DerivePointerAlignment: false
+DisableFormat: false
+EmptyLineBeforeAccessModifier: LogicalBlock
+ExperimentalAutoDetectBinPacking: false
+FixNamespaceComments: false
+IncludeBlocks: Preserve
+IncludeCategories:
+  - Regex: '^".*"'
+    Priority: 1
+  - Regex: '^<.*>'
+    Priority: 2
+IncludeIsMainRegex: '(Test)?$'
+IndentCaseLabels: false
+IndentWidth: 4
+IndentWrappedFunctionNames: false
+InsertBraces: false
+InsertNewlineAtEOF: false
+KeepEmptyLinesAtTheStartOfBlocks: true
+KeepEmptyLinesAtEOF: false
+LineEnding: DeriveLF
+MacroBlockBegin: ''
+MacroBlockEnd: ''
+MaxEmptyLinesToKeep: 1
+PenaltyBreakAssignment: 2
+PenaltyBreakBeforeFirstCallParameter: 19
+PenaltyBreakComment: 300
+PenaltyBreakFirstLessLess: 120
+PenaltyBreakOpenParenthesis: 0
+PenaltyBreakString: 1000
+PenaltyExcessCharacter: 1000000
+PenaltyIndentedWhitespace: 0
+PenaltyReturnTypeOnItsOwnLine: 60
+PointerAlignment: Left
+ReflowComments: true
+RemoveBracesLLVM: false
+RemoveParentheses: Leave
+RemoveSemicolon: false
+SeparateDefinitionBlocks: Leave
+SortIncludes: CaseSensitive
+SpaceAfterCStyleCast: false
+SpaceAfterLogicalNot: false
+SpaceBeforeAssignmentOperators: true
+SpaceBeforeCaseColon: false
+SpaceBeforeCtorInitializerColon: true
+SpaceBeforeInheritanceColon: true
+SpaceBeforeParens: ControlStatements
+SpaceInEmptyBlock: true
+SpacesBeforeTrailingComments: 1
+SpacesInAngles: Never
+SpacesInContainerLiterals: true
+SpacesInParens: Never
+SpacesInSquareBrackets: false
+TabWidth: 8
+UseTab: Never
