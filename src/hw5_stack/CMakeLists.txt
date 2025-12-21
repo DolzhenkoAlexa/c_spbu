@@ -1,15 +1,13 @@
-cmake_minimum_required(VERSION 4.0)
+cmake_minimum_required(VERSION 3.16)
 project(hw5_stack C)
 
 set(CMAKE_C_STANDARD 17)
 
-include_directories(
-    src/hw5_stack
+add_executable(hw5_stack
+    complexParenthese.c
+    stack.c
 )
 
-add_executable(complex_parentheses
-    src/hw5_stack/complexParenthese.c
-    src/hw5_stack/complexParenthese.h
-    src/hw5_stack/stack.c
-    src/hw5_stack/stack.h
-)
+if(CMAKE_C_COMPILER_ID STREQUAL "GNU")
+    target_compile_options(hw5_stack PRIVATE -Wall -Wextra -Wpedantic)
+endif()
