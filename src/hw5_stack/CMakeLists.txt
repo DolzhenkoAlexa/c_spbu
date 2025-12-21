@@ -3,7 +3,7 @@ project(hw5_stack C)
 
 set(CMAKE_C_STANDARD 17)
 
-add_executable(hw5_stack
+add_executable(complexParenthese
     complexParenthese.c
     stack.c
 )
