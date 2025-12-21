@@ -3,12 +3,11 @@ project(hw5_stack C)
 
 set(CMAKE_C_STANDARD 17)
 
-include_directories(
-    src/hw5_stack
+add_executable(hw5_stack
+    sortingStation.c
+    stack.c
 )
 
-add_executable(hw5_stack
-    src/hw5_stack/sortingStation.c
-    src/hw5_stack/sortingStation.h
-    src/hw5_stack/stack.c
-)
+if(CMAKE_C_COMPILER_ID STREQUAL "GNU")
+    target_compile_options(hw5_stack PRIVATE -Wall -Wextra -Wpedantic)
+endif()
