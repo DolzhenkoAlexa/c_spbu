@@ -1,6 +1,7 @@
 #include "sort.h"
 
-int sort_array(int array[], int count) {
+int sortArray(int array[], int count) 
+{
     int movedCount = 0;
     
     for (int i = 0; i < count - 1; i++) {
