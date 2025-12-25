@@ -3,4 +3,7 @@ project(hw6_Lists C)
 
 set(CMAKE_C_STANDARD 17)
 
-add_executable(counter counter.c)
+add_executable(counter 
+    main.c
+    counter.c
+)
