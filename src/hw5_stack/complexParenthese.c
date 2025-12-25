@@ -26,9 +26,8 @@ int checkBrackets(char str[])
             if ((lastElem == '(' && str[i] != ')')
                 || (lastElem == '[' && str[i] != ']')
                 || (lastElem == '{' && str[i] != '}'))
-                return 0;
-            // Если, например, встретились last == '{' и str[i] == '}', то все верно, идем дальше.
-            // В стек не добавляется новый элемент, а прошлый удаляется через pop
+                // В стек не добавляется новый элемент, а прошлый удаляется через pop
+                return 0; 
         }
     }
     return stackEmptiness(&stack);
