@@ -4,7 +4,6 @@
 
 struct ListOfWarriors* createList(int n)
 {
-
     struct ListOfWarriors* first = malloc(sizeof(struct ListOfWarriors)); // Создаем циклический список
     first->position = 1;
 
@@ -53,3 +52,4 @@ int counter(int n, int m)
     free(current);
     return neededPosition; // Возвращаем нужный номер
 }
+
