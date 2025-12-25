@@ -1,12 +1,31 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "counter.h"
 
-struct ListOfWarriors
+struct ListOfWarriors* createList(int n)
 {
-    int position;
-    struct ListOfWarriors* next;
-};
 
+    struct ListOfWarriors* first = malloc(sizeof(struct ListOfWarriors)); // Создаем циклический список
+    first->position = 1;
+
+    struct ListOfWarriors* current = first;
+    for (int i = 2; i <= n; i++) {
+        current->next = malloc(sizeof(struct ListOfWarriors));
+        current = current->next;
+        current->position = i;
+    }
+    current->next = first; // Замыкаем круг в циклическом списке
+
+    return first;
+}
+
+void deleteWarrior(struct ListOfWarriors** current)
+{
+    struct ListOfWarriors* toDelete = (*current)->next;
+    (*current)->next = toDelete->next;
+    free(toDelete);
+    *current = (*current)->next; // Переходим к следующему
+}
 
 int counter(int n, int m)
 {
@@ -15,46 +34,22 @@ int counter(int n, int m)
         return -1;
     }
 
-    struct ListOfWarriors* first = malloc(sizeof(*first)); // Создаем циклический список
-    first->position = 1;
-
-    struct ListOfWarriors* current = first;
-    for (int i = 2; i <= n; i++) {
-        current->next = malloc(sizeof(*current));
-        current = current->next;
-        current->position = i;
+    if (m == 1) {
+        return n; // Возвращаем нужный номер
     }
-    current->next = first; // Замыкаем круг в циклическом списке
 
-    current = first;
+    struct ListOfWarriors* current = createList(n);
+
     while (current->next != current) { //Пока не останется один воин (когда узел указывает сам на себя)
         // Находим воина под номером m-1
         for (int i = 1; i < m - 1; i++) {
             current = current->next;
         }
 
-        // Удаляем следующего воина от найденного (то есть под номером m)
-        struct ListOfWarriors* deletedWarrior = current->next;
-        current->next = deletedWarrior->next;
-        current = current->next; // Переходим к следующему
-        free(deletedWarrior);
+        deleteWarrior(&current); // Удаляем следующего воина от найденного (то есть под номером m)
     }
 
     int neededPosition = current->position;
     free(current);
-
     return neededPosition; // Возвращаем нужный номер
-}
-
-int main()
-{
-    int n, m;
-
-    printf("Введите n и m: ");
-    scanf("%d %d", &n, &m);
-
-    int result = counter(n, m);
-    printf("Нужная позиция: %d\n", result);
-
-    return 0;
 }
