@@ -1,6 +1,6 @@
 #include "stack.h"
 
-// Создаем стэк, делая значение top равным -1 ("нет элементов")
+// Создаем стек, делая значение top равным -1 ("нет элементов")
 void init_stack(Stack *stack) {
     stack->topIndex = -1;
 }
@@ -13,7 +13,7 @@ void push(Stack *stack, char value) {
 
 // Берем верхний элемент и удаляем его
 char pop(Stack *stack) {
-    if (StackEmptiness(stack)) {     // Проверяем не пуст ли стек
+    if (stackEmptiness(stack)) {     // Проверяем не пуст ли стек
         return '\0';                 // Возвращаем '\0' если пуст (в таком виде, потому что нужно вернуть char)
     }
     char value = stack->elements[stack->topIndex];  // Сохраняем верхний элемент
@@ -22,7 +22,7 @@ char pop(Stack *stack) {
 }
 
 // Проверяем пуст ли стек (Чтоб не убрать "пустоту")
-int StackEmptiness(Stack *stack) {
+int stackEmptiness(Stack *stack) {
     if (stack->topIndex == -1) {
         return 1;  // 1 - стек пуст
     } else {
