@@ -20,10 +20,11 @@ void deleteList(struct List* list)
 {
     struct Node* curr = list->head;
     while (curr) {
-        struct Node* tmp = curr;
+        struct Node* tempNode = curr;
         curr = curr->next;
-        free(tmp);
+        free(tempNode);
     }
+    
     free(list);
 }
 
@@ -35,6 +36,7 @@ void insertElement(struct List* list, int element)
         printf("Ошибка выделения памяти\n");
         return;
     }
+    
     newNode->data = element;
     newNode->next = NULL;
 
@@ -64,9 +66,9 @@ int deleteElement(struct List* list, int element)
     }
 
     if (list->head->data == element) {
-        struct Node* tmp = list->head;
+        struct Node* tempNode = list->head;
         list->head = list->head->next;
-        free(tmp);
+        free(tempNode);
         list->size--;
         return 1;
     }
@@ -81,9 +83,9 @@ int deleteElement(struct List* list, int element)
         return 0; // не найденн
     }
 
-    struct Node* tmp = curr->next;
-    curr->next = tmp->next;
-    free(tmp);
+    struct Node* tempNode = curr->next;
+    curr->next = tempNode->next;
+    free(tempNode);
     list->size--;
     return 1;
 }
