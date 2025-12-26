@@ -26,9 +26,3 @@ int deleteElement(struct List* list, int element);
 // Реализация команды 3 – распечатать список:
 void printList(struct List* list);
 
-
-// Функция main для реализации выбора команд 0-3 пользователем
-int main();
-
-
-#endif //SORTLIST_MAIN_H
