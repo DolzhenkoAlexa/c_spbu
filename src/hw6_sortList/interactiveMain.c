@@ -1,10 +1,15 @@
 #include <stdio.h>
 #include "sortList.h"
 
-int main(void)
+int main(int argc, char* argv[])
 {
     struct List* list = createEmptyList();
     int command, inputElement;
+
+    if (argc > 1 && strcmp(argv[1], "--test") == 0) {
+        runTests();
+        return 0;
+    }
 
     while (1) {
         printf("Команды:\n");
