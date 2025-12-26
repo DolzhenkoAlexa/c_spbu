@@ -5,5 +5,6 @@ set(CMAKE_C_STANDARD 17)
 
 add_executable(sortList
         interactiveMain.c
-        sortList.c )
+        sortList.c 
+        )
 
