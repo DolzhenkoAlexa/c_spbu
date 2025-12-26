@@ -106,9 +106,3 @@ void printList(struct List* list)
     printf("]\n");
 }
 
-
-            default:
-                printf("Введена неподдерживаемая команда: можно только 0,1,2,3\n");
-        }
-    }
-}
